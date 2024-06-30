@@ -1,0 +1,28 @@
+.Todo-Container {
+    margin: 50px auto;
+    width: 600px;
+    border: 1px solid red;
+}
+
+.Todo-Title {
+    margin: 15px;
+    font-size: 30px;
+    color: orange;
+    text-align: center;
+
+}
+
+.Todo-New {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+
+
+}
+
+.Todo-Data {
+    border: 1px solid green;
+    border-radius: 5px;
+}
