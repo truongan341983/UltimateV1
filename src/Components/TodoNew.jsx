@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const TodoNew = (props) => {
 
-    const { Addnewtodo, Data } = props;//truyen data, hafm tu app qua
+    const { Addnewtodo } = props;//truyen data, hafm tu app qua
     // console.log(">>>>>", Addnewtodo);
 
     //khai báo hook
@@ -10,7 +10,10 @@ const TodoNew = (props) => {
 
     // Addnewtodo('Erric');//goi ham va truyen gia tri vao ham len cha
     const handleOnclick = () => {
-        console.log(">>>ons click", Inputvalue)
+        // console.log(">>>ons click", Inputvalue)
+        Addnewtodo(Inputvalue);
+        //sau khi lam xong thi xoa di
+        SetInputvalue("");
     }
     const handleOnchange = (name) => {
         console.log(">>>onchange", name)
@@ -19,17 +22,21 @@ const TodoNew = (props) => {
 
     return (
         <>
-            <div>ho ten: {JSON.stringify(Data)}</div>
+
             {/* goi data tu app */}
             <div className="Todo-New">
                 <input
                     type="text"
+                    //chuyen gia tri
                     onChange={(event) => handleOnchange(event.target.value)}
-                //chuyen gia tri
+                    //=state cua react
+                    value={Inputvalue}
+
                 />
                 <button
                     style={{ cursor: "pointer" }}
                     onClick={handleOnclick}
+
                 >Add</button>
                 <div>my name={Inputvalue}</div>
             </div>

@@ -1,12 +1,29 @@
 const TodoData = (props) => {
-    const { age, name, Data, TodoList } = props;
+    const { TodoList, Delltodo } = props;
+    console.log("check props", TodoList)
+
+    const HandleClickDelete = (id) => {
+        alert(id)
+    }
     return (
         <>
             <div className="Todo-Data">
-                <div>data</div>
-                <div>music</div>
-                {JSON.stringify(props.TodoList)}
-            </div>
+                {/*khởi nguồn cho react là {} */}
+                {TodoList.map((item, index) => {
+                    console.log("check map:", item, index)
+                    return (
+                        // lấy id làm key
+                        < div className="todo-item" key={item.id} >
+                            <div>{item.name}</div>
+                            <button
+                                onClick={() => HandleClickDelete(item.id)}
+                                style={{ cursor: "pointer" }}
+                            >Delete</button>
+                        </div>
+                    )
+                })}
+
+            </div >
         </>
     )
 }
