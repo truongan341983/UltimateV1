@@ -15,6 +15,7 @@ const TodoNew = (props) => {
         //sau khi lam xong thi xoa di
         SetInputvalue("");
     }
+
     const handleOnchange = (name) => {
         console.log(">>>onchange", name)
         SetInputvalue(name)
@@ -22,7 +23,6 @@ const TodoNew = (props) => {
 
     return (
         <>
-
             {/* goi data tu app */}
             <div className="Todo-New">
                 <input
@@ -31,7 +31,6 @@ const TodoNew = (props) => {
                     onChange={(event) => handleOnchange(event.target.value)}
                     //=state cua react
                     value={Inputvalue}
-
                 />
                 <button
                     style={{ cursor: "pointer" }}
@@ -43,6 +42,5 @@ const TodoNew = (props) => {
         </>
     )
 }
-
 
 export { TodoNew };
