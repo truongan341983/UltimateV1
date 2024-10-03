@@ -4,8 +4,6 @@ import { TodoData } from './TodoData'
 import { TodoNew } from './TodoNew'
 import ReactLogo from '../../assets/react.svg'
 
-
-
 const TodoApp = () => {
     const [TodoList, SetTodoList] = useState([
         // { id: 1, name: "Learn react" },
@@ -52,5 +50,4 @@ const TodoApp = () => {
         </div>
     )
 }
-
 export default TodoApp;
