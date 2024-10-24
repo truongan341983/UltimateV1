@@ -10,7 +10,7 @@ const UserPage = () => {
 
     //sau khi chay hết rồi mới chạy vào useEffect, useEffect có 2 tham số 1 arrow fucion và array(mảng)
     useEffect(() => {
-        console.log("run useEffect 111")
+        // console.log("run useEffect 111")
         loadUser()
     }, []);
 
@@ -20,14 +20,17 @@ const UserPage = () => {
         const res = await fetchAllUserAPI()
         // cập nhật data vào dataUsers thông qua SetdataUsers. Truyền vào usertable và vẽ lại 
         SetdataUsers(res.data)
-        console.log("run loaduser from user ")
+        // console.log("run loaduser from user ")
     }
     // đưa data về cha( userpage) quản lý 
     return (
         <div>
             <div style={{ padding: "20px" }}>
                 <UserForm loadUser={loadUser} />
-                <UserTable dataUsers={dataUsers} />
+                <UserTable
+                    dataUsers={dataUsers}
+                    loadUser={loadUser}
+                />
             </div>
         </div>
     )

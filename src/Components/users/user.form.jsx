@@ -1,7 +1,7 @@
 import { Button, Flex, Input, notification, Modal } from "antd";
 import { useState } from "react";
 import { createUserAPI } from "../../services/api.service";
-import { json } from "react-router-dom";
+
 
 const UserForm = (props) => {
     const { loadUser } = props
@@ -21,7 +21,7 @@ const UserForm = (props) => {
         // debugger
         //nếu mình gọi res.data bị null mà gọi vào data.data sẽ lỗi.
         //res.data là nhờ cấu hình lại if (response.data && response.data.data) return response.data bên axios.customize
-        console.log("check res", res)
+        // console.log("check res", res)
         if (res.data) {
             notification.success({
                 message: "Create User",
@@ -29,7 +29,7 @@ const UserForm = (props) => {
             })
             resetAndCloseModal();
             await loadUser();// truyền ra cha (user)
-            console.log("run user form loaduser")
+            // console.log("run user form loaduser")
         }
         else {
             notification.error({
@@ -37,7 +37,7 @@ const UserForm = (props) => {
                 description: JSON.stringify(res.message)
             })
         }
-        console.log("res data:", res)
+        // console.log("res data:", res)
         // console.log("check fullname:", { fullName, email, password, phone })
     }
 
