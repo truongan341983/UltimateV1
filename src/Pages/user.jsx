@@ -4,8 +4,6 @@ import { fetchAllUserAPI } from '../services/api.service';
 import { useEffect, useState } from 'react';
 
 const UserPage = () => {
-
-
     const [dataUsers, SetdataUsers] = useState([])
 
     //sau khi chay hết rồi mới chạy vào useEffect, useEffect có 2 tham số 1 arrow fucion và array(mảng)

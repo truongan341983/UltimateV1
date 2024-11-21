@@ -14,7 +14,7 @@ const UserForm = (props) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     //Kiem tra fullname
-    const handClick = async () => {
+    const handClickModalCreateUser = async () => {
         // alert("click me")
         //in ra biến object là để trong dấu {}     
         const res = await createUserAPI(fullName, email, password, phone)
@@ -62,7 +62,7 @@ const UserForm = (props) => {
 
             <Modal title="Basic Modal"
                 open={isModalOpen}
-                onOk={() => handClick()}
+                onOk={() => handClickModalCreateUser()}
                 onCancel={() => resetAndCloseModal()}
                 maskClosable={false}
                 okText={'Creacte User'}

@@ -1,9 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-// import './header.css';
 import { UsergroupDeleteOutlined, HomeOutlined, BookOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useState } from 'react';
-
 
 const Header = () => {
     const [current, setCurrent] = useState('mail');
